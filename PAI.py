@@ -8,7 +8,6 @@ import phe.paillier
 from phe import paillier
 
 
-
 def gram(list):
     len = np.shape(list)[0]
     Tlist = []
@@ -106,9 +105,16 @@ if __name__=="__main__":
     decrypted=DecryptedNumpy(private_key,encrypted)
     decrypted1=DecryptedNumpy(private_key,encrypted1)
     decrypted2=DecryptedNumpy(private_key,encrypted2)
+    print('------------加密前----------')
+    print('array1加密后的矩阵为：')
     print(encrypted1)
+    print('array2加密后的矩阵为：')
     print(encrypted2)
+    print('array1和array2加密后点乘结果是：')
     print(encrypted)
-    print(decrypted)
+    print('array1解密后的gram矩阵结果：')
     print(decrypted1)
+    print('array2解密后的gram矩阵结果：')
     print(decrypted2)
+    print('加密点乘后解密结果：')
+    print(decrypted)
