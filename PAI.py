@@ -23,6 +23,7 @@ def gram(list):
 #加密
 def EncryptedNumpy(public_key,array):
     array = gram(array)
+    print(array)
     length=len(array)
     encrypted_line=[]
     encrypted_array=[]
@@ -98,7 +99,7 @@ if __name__=="__main__":
     array1 = [[12,2],[3,4],[7,8]]
     array2=[[5,3],[7,9]]
     public_key, private_key = paillier.generate_paillier_keypair()
-    #生成公钥对
+    #生成密钥对
     encrypted1=EncryptedNumpy(public_key,array1)
     encrypted2=EncryptedNumpy(public_key,array2)
     encrypted=add_product(encrypted1,encrypted2,public_key)
