@@ -22,8 +22,6 @@ def gram(list):
 
 #加密
 def EncryptedNumpy(public_key,array):
-    array = gram(array)
-    print(array)
     length=len(array)
     encrypted_line=[]
     encrypted_array=[]
@@ -94,9 +92,9 @@ def lena2b(a,alen,blen,public_key):
         ilist = []
     return new_a
 
-if __name__=="__main__":
+'''
     # 数组数据
-    array1 = [[12,2],[3,4],[7,8]]
+    array1 = [[12,2],[3,4]]
     array2=[[5,3],[7,9]]
     public_key, private_key = paillier.generate_paillier_keypair()
     #生成密钥对
@@ -113,9 +111,17 @@ if __name__=="__main__":
     print(encrypted2)
     print('array1和array2加密后点乘结果是：')
     print(encrypted)
-    print('array1解密后的gram矩阵结果：')
+    print('array1解密后的结果：')
     print(decrypted1)
-    print('array2解密后的gram矩阵结果：')
+    print('array2解密后的结果：')
     print(decrypted2)
     print('加密点乘后解密结果：')
     print(decrypted)
+'''
+
+
+if __name__=="__main__":
+    data=5
+    public_key, private_key = paillier.generate_paillier_keypair()
+    encrypted = public_key.encrypt(int(data))
+    print(encrypted)

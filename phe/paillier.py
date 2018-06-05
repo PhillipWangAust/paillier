@@ -91,7 +91,7 @@ class PaillierPublicKey(object):
 
     def __repr__(self):
         publicKeyHash = hex(hash(self))[2:]
-        return "<PaillierPublicKey {}>".format(publicKeyHash[:10])
+        return "{}".format(publicKeyHash[:10])
 
     def __eq__(self, other):    #把other的n值传参给self
         return self.n == other.n
@@ -278,7 +278,7 @@ class PaillierPrivateKey(object):
 
     def __repr__(self):
         pub_repr = repr(self.public_key)
-        return "<PaillierPrivateKey for {}>".format(pub_repr)
+        return "{}".format(pub_repr)
 
     def decrypt(self, encrypted_number):
         """Return the decrypted & decoded plaintext of *encrypted_number*.
