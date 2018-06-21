@@ -4,17 +4,14 @@ import sklearn.model_selection as train
 #处理旧数据
 from sklearn.metrics import accuracy_score
 
-
-
-
-'''
+#数据来源：https://goo.gl/U2Uwz2
 #数据处理
 from phe import paillier
 def process_data():
-    ''''''
+    '''
     处理旧数据
     :return: 新的数据集存放在data.txt中，未处理的数据存放在old_data.txt中
-    ''''''
+    '''
     file=open('old_data.txt','r')
     outfile=open('data.txt','w')
     lines=file.readlines()
@@ -53,24 +50,7 @@ def Encrypt_data():
             str=str+every[-11:-2]+','
         str=str[:-1]+'\n'
         outfile.write(str)
-        
-def Hex2Dec():
-#把加密后的16进制转10进制处理，存到process_data.txt中
-    file = open('encrypted_data.txt', 'r')
-    outfile = open('process_data.txt','w')
-    lines = file.readlines()
-    for line in lines[2:]:
-        outline = []
-        line = line.split(',')
-        for each in line:
-            new = (int(each,16))
-            outline.append(new)
-        str = '{},'.format(outline[0])
-        for every in outline[1:]:
-            every = '{}'.format(every)
-            str = str + every[-11:-2] + ','
-        str = str[:-1] + '\n'
-        outfile.write(str)
+  
 
 
 def Classification(filename,outfilename1,outfilename2):
@@ -107,7 +87,26 @@ def Classification(filename,outfilename1,outfilename2):
         str2=str2[:-1]+'\n'
         outfile1.write(str1)
         outfile2.write(str2)
-'''
+
+
+
+def Hex2Dec():
+    # 把加密后的16进制转10进制处理，存到process_data.txt中
+    file = open('new_encrypted.txt', 'r')
+    outfile = open('new_processed.txt', 'w')
+    lines = file.readlines()
+    for line in lines:
+        outline = []
+        line = line.split(',')
+        for each in line:
+            new = (int(each, 16))
+            outline.append(new)
+        str = '{},'.format(outline[0])
+        for every in outline[1:]:
+            every = '{}'.format(every)
+            str = str + every[-11:-2] + ','
+        str = str[:-1] + '\n'
+        outfile.write(str)
 
 def loadData(filename,type):
     data = np.loadtxt(filename, dtype=type, delimiter=',',skiprows=2)
@@ -120,18 +119,39 @@ def loadData(filename,type):
     return x_train,x_test,y_train,y_test
 
 
+'''
+#筛选infilename中的数据，保存到outfilenmae中，GoodData存放不需要的属性列，例如[1,2,3]
+def GetGoodData(infilename ='data.txt',outfilename=None,GoodData=None):
+    file = open(infilename, 'r')
+    outfile = open(outfilename, 'w')
+    lines = file.readlines()
+    for line in lines[2:]:
+        line = line.split(',')
+        newline =[]
+        for i in range(0,len(line)):
+            if i not in GoodData:
+                newline.append(line[i])
+        str = ''
+        for each in newline:
+            each = '{},'.format(each)
+            str = str + each
+        str = str[:-1]
+        outfile.write(str)
+'''
+
 
 def train_SVM(x_train,y_train):
     '''
     kernel='linear'时，为线性核，C越大分类效果越好，但有可能会过拟合（defaul C=1）。
-　　 kernel='rbf'时（default），为高斯核，gamma值越小，分类界面越连续；gamma值越大，分类界面越“散”，分类效果越好，但有可能会过拟合。
+　　 kernel='rbf'时（default），为高斯核
+    gamma值越小，分类界面越连续；gamma值越大，分类界面越“散”，分类效果越好，但有可能会过拟合。
 　　decision_function_shape='ovr'时，为one v rest，即一个类别与其他类别进行划分，
 　　decision_function_shape='ovo'时，为one v one，即将类别两两之间进行划分，用二分类的方法模拟多分类的结果。
     :param x_train: 数据集
     :param y_train: 分类标签
     :return:
     '''
-    clf= svm.SVC(C=0.5,kernel='rbf',gamma=100,decision_function_shape='ovo')
+    clf= svm.SVC(C=0.1,kernel='rbf',gamma=0.000001,decision_function_shape='ovo')
     clf.fit(x_train,y_train.ravel())
     return clf
 
@@ -145,12 +165,13 @@ def test_SVM(x_train,x_test,y_train,y_test,clf=None):
     score=accuracy_score(y_hat,y_test)
     print('测试集准确率：{}'.format(score))
 
+
 print('加密前的数据：')
-x_train1, x_test1, y_train1, y_test1=loadData('data.txt',float)
+x_train1, x_test1, y_train1, y_test1=loadData('new_data.txt',float)
 clf1=train_SVM(x_train1, y_train1)
 test_SVM(x_train1, x_test1, y_train1, y_test1, clf1)
 print('加密前第一组数据：')
-x_train11, x_test11, y_train11, y_test11=loadData('data1.txt',float)
+x_train11, x_test11, y_train11, y_test11=loadData('new_data1.txt',float)
 clf11=train_SVM(x_train11, y_train11)
 test_SVM(x_train11, x_test11, y_train11, y_test11, clf11)
 print('加密前第二组数据：')
@@ -159,15 +180,16 @@ clf12=train_SVM(x_train12, y_train12)
 test_SVM(x_train12, x_test12, y_train12, y_test12, clf12)
 
 print('加密后的数据：')
-x_train2, x_test2, y_train2, y_test2=loadData('process_data.txt',int)
+x_train2, x_test2, y_train2, y_test2=loadData('new_processed.txt',int)
 clf2=train_SVM(x_train2, y_train2)
 test_SVM(x_train2, x_test2, y_train2, y_test2, clf2)
 print('加密后第一组数据：')
-x_train21, x_test21, y_train21, y_test21=loadData('process_data1.txt',int)
+x_train21, x_test21, y_train21, y_test21=loadData('new_processed1.txt',int)
 clf21=train_SVM(x_train21, y_train21)
 test_SVM(x_train21, x_test21, y_train21, y_test21, clf21)
 print('加密后第二组数据：')
-x_train22, x_test22, y_train22, y_test22=loadData('process_data2.txt',int)
+x_train22, x_test22, y_train22, y_test22=loadData('new_processed2.txt',int)
 clf22=train_SVM(x_train22, y_train22)
 test_SVM(x_train22, x_test22, y_train22, y_test22, clf22)
+
 
