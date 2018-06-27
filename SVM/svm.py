@@ -80,7 +80,7 @@ def Classification(filename,outfilename1,outfilename2):
             each1 = '{},'.format(each1)
             str1 = str1 + each1
         str2 = ''
-        for each2 in out1:
+        for each2 in out2:
             each2 = '{},'.format(each2)
             str2 = str2 + each2
         str1=str1[:-1]+'\n'
@@ -119,6 +119,7 @@ def loadData(filename,type):
     return x_train,x_test,y_train,y_test
 
 
+
 '''
 #筛选infilename中的数据，保存到outfilenmae中，GoodData存放不需要的属性列，例如[1,2,3]
 def GetGoodData(infilename ='data.txt',outfilename=None,GoodData=None):
@@ -151,7 +152,7 @@ def train_SVM(x_train,y_train):
     :param y_train: 分类标签
     :return:
     '''
-    clf= svm.SVC(C=0.1,kernel='rbf',gamma=0.000001,decision_function_shape='ovo')
+    clf= svm.SVC(C=1,kernel='rbf',gamma=0.000001,decision_function_shape='ovo')
     clf.fit(x_train,y_train.ravel())
     return clf
 
@@ -164,6 +165,8 @@ def test_SVM(x_train,x_test,y_train,y_test,clf=None):
     y_hat=clf.predict(x_test)
     score=accuracy_score(y_hat,y_test)
     print('测试集准确率：{}'.format(score))
+
+
 
 
 print('加密前的数据：')
@@ -191,5 +194,6 @@ print('加密后第二组数据：')
 x_train22, x_test22, y_train22, y_test22=loadData('new_processed2.txt',int)
 clf22=train_SVM(x_train22, y_train22)
 test_SVM(x_train22, x_test22, y_train22, y_test22, clf22)
+
 
 

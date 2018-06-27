@@ -1,0 +1,140 @@
+1.标题：威斯康星诊断性乳腺癌（WDBC）
+
+2.来源信息
+
+a）创作者： 
+
+	威廉霍尔沃尔伯格博士，普通外科，大学
+	威斯康星州，临床科学中心，麦迪逊，WI 53792
+	wolberg@eagle.surgery.wisc.edu
+
+	W. Nick大街，计算机科学系，大学
+	威斯康星州1210 West Dayton St.，麦迪逊，威斯康星州53706
+	street@cs.wisc.edu 608-262-6619
+
+	Olvi L. Mangasarian，德克萨斯大学计算机科学系
+	威斯康星州1210 West Dayton St.，麦迪逊，威斯康星州53706
+	olvi@cs.wisc.edu 
+
+b）捐赠者：尼克街
+
+c）日期：1995年11月
+
+3.过去的用法：
+
+第一次使用：
+
+	WN Street，WH Wolberg和OL Mangasarian 
+	核特征提取用于乳腺肿瘤诊断。
+	IS＆T / SPIE 1993电子成像国际研讨会：科学
+	和Technology，卷1905，第861-870页，San Jose，CA，1993。
+
+OR文献：
+
+	OL Mangasarian，WN Street和WH Wolberg。 
+	乳腺癌诊断和预后的线性规划。 
+	Operations Research，43（4），第570-577页，1995年7月至8月。
+
+医学文献：
+
+	WH Wolberg，WN Street和OL Mangasarian。 
+	机器学习技术诊断乳腺癌的方法
+	细针吸出物。  
+	Cancer Letters 77（1994）163-171。
+
+	WH Wolberg，WN Street和OL Mangasarian。 
+	图像分析和机器学习应用于乳腺癌
+	诊断和预后。  
+	分析和定量细胞学和组织学，卷。17
+	第2期，第77-87页，1995年4月。 
+
+	WH Wolberg，WN Street，DM Heisey和OL Mangasarian。 
+	计算机辅助乳腺癌的诊断和预后
+	针头抽吸。  
+	Archives of Surgery 1995; 130：511-516。
+
+	WH Wolberg，WN Street，DM Heisey和OL Mangasarian。 
+	计算机派生的核特征区别于恶性肿瘤
+	良性乳房细胞学。  
+	人类病理学，26：792-796,1995。
+
+也可以看看：
+	http://www.cs.wisc.edu/~olvi/uwmp/mpml.html
+	http://www.cs.wisc.edu/~olvi/uwmp/cancer.html
+
+结果：
+
+	- 预测场2，诊断：B =良性，M =恶性
+	- 使用全部30个输入功能，套件可线性分离
+	- 使用一个分离平面获得最佳预测精度
+		在最差区域的三维空间中，最差的平滑度和最差的区域
+		平均纹理。估计准确率97.5％重复使用
+		10倍交叉验证。分类器已正确
+		截至11月，共诊断出176例新患者
+		1995年。 
+
+4.相关信息
+
+	特征根据细针的数字化图像计算
+	抽吸（FNA）乳房肿块。他们描述
+	存在于图像中的细胞核的特征。
+	一些图像可以在这里找到
+	http://www.cs.wisc.edu/~street/images/
+
+	使用上述分离平面
+	多表面方法树（MSM-T）[KP贝内特，“决策树
+	通过线性规划构造。“第四届会议录
+	中西部人工智能与认知科学学会，
+	pp.97-101,1992]，一种使用线性的分类方法
+	编程来构建决策树。相关功能
+	在1-4的空间中进行了详尽的搜索
+	特征和1-3分离平面。
+
+	用于获得分离平面的实际线性程序
+	在三维空间中描述的是：
+	[KP Bennett和OL Mangasarian：“强健的线性
+	两个线性不可分集的编程辨识“，
+	Optimization Methods and Software 1，1992，23-34]。
+
+
+	这个数据库也可以通过UW CS ftp服务器获得：
+
+	ftp ftp.cs.wisc.edu
+	cd math-prog / cpo-dataset / machine-learn / WDBC /
+
+5.实例数量：569 
+
+6.属性数量：32（ID，诊断，30个实值输入功能）
+
+7.属性信息
+
+1）身份证号码
+2）诊断（M =恶性，B =良性）
+3-32）
+
+为每个细胞核计算十个实值特征：
+
+	a）半径（从中心到周边点的距离的平均值）
+	b）纹理（灰度值的标准偏差）
+	c）周界
+	d）区域
+	e）光滑度（半径长度的局部变化）
+	f）紧凑性（周长^ 2 /面积 -  1.0）
+	g）凹度（轮廓凹部的严重程度）
+	h）凹点（轮廓的凹入部分的数量）
+	我）对称 
+	j）分形维数（“海岸线近似” -  1）
+
+上面列出的几篇论文都包含了详细的描述
+如何计算这些功能。 
+
+平均值，标准误差，“最差”或最大（三者的平均值
+对于每个图像计算这些特征的最大值）
+产生30个特征。例如，字段3是平均半径字段
+13是Radius SE，23场是Worst Radius。
+
+所有功能值都用四位有效数字重新编码。
+
+缺少属性值：无
+
+9.分级：357良性，212恶性
