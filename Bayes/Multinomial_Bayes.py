@@ -2,6 +2,11 @@ from sklearn.naive_bayes import MultinomialNB  #多项式分布朴素贝叶斯
 import numpy as np
 import sklearn.model_selection as train
 from sklearn.metrics import accuracy_score
+import os
+
+#数据目录
+FilePath = os.path.abspath('..')+"\\data"
+
 
 def loadData(filename,type):
     data = np.loadtxt(filename, dtype=type, delimiter=',',skiprows=2)
@@ -32,28 +37,28 @@ def Test_Bayes(x_train,x_test,y_train,y_test,clf):
 
 
 print('加密前的数据：')
-x_train1, x_test1, y_train1, y_test1=loadData('new_data.txt',float)
+x_train1, x_test1, y_train1, y_test1=loadData(FilePath + '\\new_data.txt',float)
 clf1=Train_Bayes(x_train1, y_train1)
 Test_Bayes(x_train1, x_test1, y_train1, y_test1, clf1)
 print('加密前第一组数据：')
-x_train11, x_test11, y_train11, y_test11=loadData('new_data1.txt',float)
+x_train11, x_test11, y_train11, y_test11=loadData(FilePath + '\\new_data1.txt',float)
 clf11=Train_Bayes(x_train11, y_train11)
 Test_Bayes(x_train11, x_test11, y_train11, y_test11, clf11)
 print('加密前第二组数据：')
-x_train12, x_test12, y_train12, y_test12=loadData('data2.txt',float)
+x_train12, x_test12, y_train12, y_test12=loadData(FilePath + '\\data2.txt',float)
 clf12=Train_Bayes(x_train12, y_train12)
 Test_Bayes(x_train12, x_test12, y_train12, y_test12, clf12)
 
 if __name__ == '__main__':
     print('加密后的数据：')
-    x_train2, x_test2, y_train2, y_test2 = loadData('new_processed.txt', int)
+    x_train2, x_test2, y_train2, y_test2 = loadData(FilePath + '\\new_processed.txt', int)
     clf2 = Train_Bayes(x_train2, y_train2)
     Test_Bayes(x_train2, x_test2, y_train2, y_test2, clf2)
     print('加密后第一组数据：')
-    x_train21, x_test21, y_train21, y_test21 = loadData('new_processed1.txt', int)
+    x_train21, x_test21, y_train21, y_test21 = loadData(FilePath + '\\new_processed1.enc', int)
     clf21 = Train_Bayes(x_train21, y_train21)
     Test_Bayes(x_train21, x_test21, y_train21, y_test21, clf21)
     print('加密后第二组数据：')
-    x_train22, x_test22, y_train22, y_test22 = loadData('new_processed2.txt', int)
+    x_train22, x_test22, y_train22, y_test22 = loadData(FilePath + '\\new_processed2.enc', int)
     clf22 = Train_Bayes(x_train22, y_train22)
     Test_Bayes(x_train22, x_test22, y_train22, y_test22, clf22)

@@ -85,11 +85,11 @@ def Classification(filename, outfilename1, outfilename2):
         outfile2.write(str2)
 
 
-def Hex2Dec():
-    # 把加密后的16进制转10进制处理，存到process_data.txt中
-    file = open('new_encrypted.txt', 'r')
-    outfile = open('new_processed.txt', 'w')
-    lines = file.readlines()
+def Hex2Dec(infilename,outfilename):
+    # 把加密后的16进制转10进制处理，存到outfilename中
+    infile = open(infilename, 'r')
+    outfile = open(outfilename, 'w')
+    lines = infile.readlines()
     for line in lines:
         outline = []
         line = line.split(',')
@@ -98,9 +98,9 @@ def Hex2Dec():
             outline.append(new)
         str = '{},'.format(outline[0])
         for every in outline[1:]:
-            every = '{}'.format(every)
-            str = str + every[-11:-2] + ','
-        str = str[:-1] + '\n'
+            every = '{},'.format(every)
+            str = str + every
+        str = str[:-1]+'\n'
         outfile.write(str)
 
 
@@ -121,3 +121,36 @@ def GetGoodData(infilename='data.txt', outfilename=None, GoodData=None):
             str = str + each
         str = str[:-1]
         outfile.write(str)
+
+
+def Encrypted_Data_Process(infilename,outfilename):
+    '''
+    处理加密数据，只保留每组数据的后两位
+    :param infilename: 要处理的数据文件
+    :param outfilename: 处理后的数据文件
+    :return: 处理后的数据放在outfile里面
+    '''
+    infile=open(infilename,'r')
+    outfile=open(outfilename,'w')
+    lines=infile.readlines()
+    for line in lines:
+        line=line.split(',')
+        newline=[]
+        newline.append(line[0])
+        for each in line[1:-1]:
+            newline.append(each[-2:])
+        newline.append(line[-1][-3:])
+        str=''
+        for each in newline:
+            each='{},'.format(each)
+            str = str + each
+        str=str[:-1]
+        outfile.write(str)
+
+
+if __name__ == '__main__':
+#调用函数
+    #Encrypted_Data_Process(infilename='new_encrypted.txt',outfilename='new_encrypted.enc')
+    #Hex2Dec('new_encrypted.enc','new_processed.enc')
+    #Classification(filename='new_processed.enc',outfilename1='new_processed1.enc',outfilename2='new_processed2.enc')
+    pass
