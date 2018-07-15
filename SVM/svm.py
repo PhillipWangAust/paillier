@@ -5,8 +5,7 @@ import sklearn.model_selection as train
 from sklearn.metrics import accuracy_score
 import os
 
-#数据目录
-FilePath = os.path.abspath('..')+"\\data"
+
 
 
 
@@ -38,7 +37,7 @@ def train_SVM(x_train,y_train):
     clf.fit(x_train,y_train.ravel())
     return clf
 
-def test_SVM(x_train,x_test,y_train,y_test,clf=None):
+def Test_SVM(x_train,x_test,y_train,y_test,clf=None):
     if clf is None:
         raise IOError("Must input a clf!")
     y_hat = clf.predict(x_train)
@@ -51,31 +50,33 @@ def test_SVM(x_train,x_test,y_train,y_test,clf=None):
 
 
 if __name__ == '__main__':
+    # 数据目录
+    FilePath = os.path.abspath('..') + "\\data"
     print('加密前的数据：')
     x_train1, x_test1, y_train1, y_test1 = loadData(FilePath+'\\new_data.txt', float)
     clf1 = train_SVM(x_train1, y_train1)
-    test_SVM(x_train1, x_test1, y_train1, y_test1, clf1)
+    Test_SVM(x_train1, x_test1, y_train1, y_test1, clf1)
     print('加密前第一组数据：')
     x_train11, x_test11, y_train11, y_test11 = loadData(FilePath+'\\new_data1.txt', float)
     clf11 = train_SVM(x_train11, y_train11)
-    test_SVM(x_train11, x_test11, y_train11, y_test11, clf11)
+    Test_SVM(x_train11, x_test11, y_train11, y_test11, clf11)
     print('加密前第二组数据：')
     x_train12, x_test12, y_train12, y_test12 = loadData(FilePath+'\\data2.txt', float)
     clf12 = train_SVM(x_train12, y_train12)
-    test_SVM(x_train12, x_test12, y_train12, y_test12, clf12)
+    Test_SVM(x_train12, x_test12, y_train12, y_test12, clf12)
 
     print('加密后的数据：')
     x_train2, x_test2, y_train2, y_test2 = loadData(FilePath+'\\new_processed.enc', int)
     clf2 = train_SVM(x_train2, y_train2)
-    test_SVM(x_train2, x_test2, y_train2, y_test2, clf2)
+    Test_SVM(x_train2, x_test2, y_train2, y_test2, clf2)
     print('加密后第一组数据：')
     x_train21, x_test21, y_train21, y_test21 = loadData(FilePath+'\\new_processed1.enc', int)
     clf21 = train_SVM(x_train21, y_train21)
-    test_SVM(x_train21, x_test21, y_train21, y_test21, clf21)
+    Test_SVM(x_train21, x_test21, y_train21, y_test21, clf21)
     print('加密后第二组数据：')
     x_train22, x_test22, y_train22, y_test22 = loadData(FilePath+'\\new_processed2.enc', int)
     clf22 = train_SVM(x_train22, y_train22)
-    test_SVM(x_train22, x_test22, y_train22, y_test22, clf22)
+    Test_SVM(x_train22, x_test22, y_train22, y_test22, clf22)
 
 
 

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5fa5eeb0-d62d-4caf-a3d2-80ad73c4d4cc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SVM/svm.py" afterPath="$PROJECT_DIR$/SVM/svm.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +20,7 @@
     <SUITE FILE_PATH="coverage/paillier$test_svm.coverage" NAME="test_svm Coverage Results" MODIFIED="1527770423995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SVM" />
     <SUITE FILE_PATH="coverage/paillier$Gaussian_Bayes.coverage" NAME="Gaussian_Bayes Coverage Results" MODIFIED="1530238005907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bayes" />
     <SUITE FILE_PATH="coverage/paillier$svm__1_.coverage" NAME="svm (1) Coverage Results" MODIFIED="1527482462426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/svmpy-master/svmpy" />
-    <SUITE FILE_PATH="coverage/paillier$Nosetests_in_svm_py.coverage" NAME="Nosetests in svm.py Coverage Results" MODIFIED="1530238079614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SVM" />
+    <SUITE FILE_PATH="coverage/paillier$Nosetests_in_svm_py.coverage" NAME="Nosetests in svm.py Coverage Results" MODIFIED="1531668846136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SVM" />
     <SUITE FILE_PATH="coverage/paillier$Bernoulli_Bayes.coverage" NAME="Bernoulli_Bayes Coverage Results" MODIFIED="1530234146011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bayes" />
     <SUITE FILE_PATH="coverage/paillier$Multinomial_Bayes.coverage" NAME="Multinomial_Bayes Coverage Results" MODIFIED="1530238039055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bayes" />
     <SUITE FILE_PATH="coverage/paillier$qinagke.coverage" NAME="qinagke Coverage Results" MODIFIED="1530429577785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -31,13 +32,25 @@
     <SUITE FILE_PATH="coverage/paillier$decision.coverage" NAME="decision Coverage Results" MODIFIED="1530238163152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Decision_Tree" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="process_data.py" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="process_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/process_data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="523">
-              <caret line="146" column="20" lean-forward="true" selection-start-line="142" selection-start-column="8" selection-end-line="146" selection-end-column="20" />
+              <caret line="146" column="20" lean-forward="false" selection-start-line="142" selection-start-column="8" selection-end-line="146" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="svm.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SVM/svm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,10 +116,10 @@
         <option value="$PROJECT_DIR$/data/new_processed.enc" />
         <option value="$PROJECT_DIR$/data/process_data.py" />
         <option value="$PROJECT_DIR$/Bayes/Gaussian_Bayes.py" />
-        <option value="$PROJECT_DIR$/SVM/svm.py" />
         <option value="$PROJECT_DIR$/Decision_Tree/decision.py" />
         <option value="$PROJECT_DIR$/Bayes/Multinomial_Bayes.py" />
         <option value="$PROJECT_DIR$/qinagke.py" />
+        <option value="$PROJECT_DIR$/SVM/svm.py" />
       </list>
     </option>
   </component>
@@ -152,8 +165,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,6 +178,16 @@
               <item name="paillier" type="b2602c69:ProjectViewProjectNode" />
               <item name="paillier" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="paillier" type="b2602c69:ProjectViewProjectNode" />
+              <item name="paillier" type="462c0819:PsiDirectoryNode" />
+              <item name="phe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="paillier" type="b2602c69:ProjectViewProjectNode" />
+              <item name="paillier" type="462c0819:PsiDirectoryNode" />
+              <item name="SVM" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -200,7 +223,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.qinagke">
+  <component name="RunManager" selected="Python tests.Nosetests in svm.py">
     <configuration name="Gaussian_Bayes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -298,9 +321,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.qinagke" />
-        <item index="1" class="java.lang.String" itemvalue="Python.decision" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in svm.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in svm.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python.qinagke" />
+        <item index="2" class="java.lang.String" itemvalue="Python.decision" />
         <item index="3" class="java.lang.String" itemvalue="Python.Multinomial_Bayes" />
         <item index="4" class="java.lang.String" itemvalue="Python.Gaussian_Bayes" />
       </list>
@@ -323,28 +346,28 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_in_math_test_py_(1) - 2018.05.24 at 18h 39m 21s.xml">
-      <configuration name="Nosetests in math_test.py (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_math_test_py_(1) - 2018.05.24 at 18h 41m 37s.xml">
-      <configuration name="Nosetests in math_test.py (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_math_test_py_(1) - 2018.05.24 at 18h 53m 52s.xml">
-      <configuration name="Nosetests in math_test.py (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_svm_py - 2018.05.28 at 18h 18m 03s.xml">
-      <configuration name="Nosetests in svm.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_svm_py - 2018.06.05 at 23h 19m 24s.xml">
-      <configuration name="Nosetests in svm.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_svm_py - 2018.06.05 at 23h 20m 07s.xml">
-      <configuration name="Nosetests in svm.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Nosetests_in_svm_py - 2018.06.29 at 10h 07m 46s.xml">
       <configuration name="Nosetests in svm.py" configurationId="tests" />
     </history-entry>
     <history-entry file="Nosetests_in_svm_py - 2018.06.29 at 10h 08m 01s.xml">
+      <configuration name="Nosetests in svm.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_svm_py - 2018.07.15 at 23h 27m 33s.xml">
+      <configuration name="Nosetests in svm.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_svm_py - 2018.07.15 at 23h 28m 45s.xml">
+      <configuration name="Nosetests in svm.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_svm_py - 2018.07.15 at 23h 30m 57s.xml">
+      <configuration name="Nosetests in svm.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_svm_py - 2018.07.15 at 23h 32m 47s.xml">
+      <configuration name="Nosetests in svm.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_svm_py - 2018.07.15 at 23h 33m 51s.xml">
+      <configuration name="Nosetests in svm.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_svm_py - 2018.07.15 at 23h 34m 08s.xml">
       <configuration name="Nosetests in svm.py" configurationId="tests" />
     </history-entry>
     <history-entry file="Nosetests_in_test_py - 2018.05.24 at 18h 36m 08s.xml">
@@ -362,13 +385,13 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3253638" sideWeight="0.30625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48128897" sideWeight="0.69375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2099792" sideWeight="0.69375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41580042" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41580042" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -388,12 +411,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/unittest/case.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/nose/case.py" />
     <entry file="file://$PROJECT_DIR$/phe/paillier.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -457,13 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/new_data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Anaconda/Lib/_bootlocale.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -513,13 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SVM/svm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2812">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Decision_Tree/decision.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1998">
@@ -566,8 +574,34 @@
     <entry file="file://$PROJECT_DIR$/data/process_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="523">
-          <caret line="146" column="20" lean-forward="true" selection-start-line="142" selection-start-column="8" selection-end-line="146" selection-end-column="20" />
+          <caret line="146" column="20" lean-forward="false" selection-start-line="142" selection-start-column="8" selection-end-line="146" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phe/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/new_data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SVM/svm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
