@@ -8,7 +8,6 @@ import os
 
 
 
-
 def loadData(filename,type):
     data = np.loadtxt(filename, dtype=type, delimiter=',',skiprows=2)
     x,y=np.split(data,indices_or_sections=(1,),axis=1)
@@ -33,6 +32,7 @@ def train_SVM(x_train,y_train):
     :param y_train: 分类标签
     :return:
     '''
+
     clf= svm.SVC(C=1,kernel='rbf',gamma=0.000001,decision_function_shape='ovo')
     clf.fit(x_train,y_train.ravel())
     return clf
@@ -50,6 +50,8 @@ def Test_SVM(x_train,x_test,y_train,y_test,clf=None):
 
 
 if __name__ == '__main__':
+
+
     # 数据目录
     FilePath = os.path.abspath('..') + "\\data"
     print('加密前的数据：')

@@ -1,5 +1,5 @@
 from phe import paillier
-
+import numpy as np
 #处理数据的各种辅助函数
 #数据来源：https://goo.gl/U2Uwz2
 #数据处理
@@ -148,9 +148,45 @@ def Encrypted_Data_Process(infilename,outfilename):
         outfile.write(str)
 
 
+def gram(list):
+    len = np.shape(list)[0]
+    Tlist = []
+    gramMetric = []
+    for i in list:
+        Tlist.append(np.transpose(i))
+    for i in range(len):
+        for j in range(len):
+            gramMetric.append(np.dot(list[i],Tlist[j]))
+    return np.reshape(gramMetric,[len,len])
+
+def Gram(infilename,outfilename):
+    infile=open(infilename,'r')
+    outfile=open(outfilename,'w')
+    lines=infile.readlines()
+    newlines=[]
+    for line in lines:
+        newline=[]
+        line = line.split(',')
+        for each in line:
+            newline.append(int(each))
+        newlines.append(newline)
+    newlines=gram(newlines)
+
+    for line in newlines:
+        str = ''
+        for each in line:
+            str=str+'{},'.format(each)
+        outfile.write(str[:-1]+'\n')
+    infile.close()
+    outfile.close()
+
+
+
+
+
 if __name__ == '__main__':
 #调用函数
     #Encrypted_Data_Process(infilename='new_encrypted.txt',outfilename='new_encrypted.enc')
     #Hex2Dec('new_encrypted.enc','new_processed.enc')
     #Classification(filename='new_processed.enc',outfilename1='new_processed1.enc',outfilename2='new_processed2.enc')
-    pass
+    Gram('new_processed.txt','gram.txt')
